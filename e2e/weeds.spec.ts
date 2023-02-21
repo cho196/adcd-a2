@@ -19,6 +19,7 @@ test.describe("Table tests", () => {
     expect(grabbedDisplay).toBe("top");
   });
   test("Table font size", async ({ page }) => {
+    await page.goto(weedsPage);
     const table = page.locator("table");
     const grabbedBackground = await table.evaluate((ele) => {
       return window.getComputedStyle(ele).getPropertyValue("font-size");
@@ -26,6 +27,7 @@ test.describe("Table tests", () => {
     expect(grabbedBackground).toBe("14px");
   });
   test("Table font color", async ({ page }) => {
+    await page.goto(weedsPage);
     const table = page.locator("table");
     const grabbedFontColor = await table.evaluate((ele) => {
       return window.getComputedStyle(ele).getPropertyValue("color");
@@ -33,6 +35,7 @@ test.describe("Table tests", () => {
     expect(grabbedFontColor).toBe("#000");
   });
   test("Table border", async ({ page }) => {
+    await page.goto(weedsPage);
     const table = page.locator("table");
     const grabbedBorder = await table.evaluate((ele) => {
       return window.getComputedStyle(ele).getPropertyValue("border");
